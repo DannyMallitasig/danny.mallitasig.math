@@ -1,0 +1,402 @@
+/* ==========================================================================
+   Danny Mallitasig — Formal Academic Stylesheet
+   Design Reference: AMARUN (Asociación de Científicos) & European Mathematics Labs
+   Colors: Deep Academic Navy, AMARUN Bordeaux Red, Crisp Slate & Clean Paper White
+   NO neon glows, NO fluorescent lighting. Clean, authoritative, scholarly.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --font-serif: 'EB Garamond', Garamond, 'Latin Modern Roman', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Formal Academic Light Theme (Inspired by AMARUN & CNRS) */
+  --bg-base: #fcfcfd;
+  --bg-surface: #ffffff;
+  --bg-muted: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  
+  --text-main: #0f172a;        /* Deep slate text */
+  --text-secondary: #334155;   /* Neutral slate */
+  --text-muted: #64748b;       /* Muted captions */
+  
+  --navy-primary: #0f2b5c;     /* Institutional Navy */
+  --navy-hover: #1e3a8a;
+  --navy-light: #eff6ff;
+  
+  --amarun-red: #991b1b;       /* AMARUN Bordeaux / Crimson */
+  --amarun-red-hover: #7f1d1d;
+  --amarun-red-subtle: #fef2f2;
+  
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+  
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  /* Formal Scholarly Dark Theme (Oxford Blue & Sober Slate) */
+  --bg-base: #0a1128;
+  --bg-surface: #111c38;
+  --bg-muted: #17254e;
+  --bg-subtle: #1e2f5f;
+  
+  --text-main: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  --navy-primary: #60a5fa;     /* Formal Blue */
+  --navy-hover: #93c5fd;
+  --navy-light: rgba(96, 165, 250, 0.12);
+  
+  --amarun-red: #f87171;
+  --amarun-red-hover: #fca5a5;
+  --amarun-red-subtle: rgba(239, 68, 68, 0.12);
+  
+  --border-color: #273966;
+  --border-strong: #3b528a;
+  
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --card-shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.65;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+}
+
+/* Academic Serif Headings */
+h1, h2, h3, h4, .academic-heading {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--navy-primary);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: #f1f5f9;
+}
+
+/* Formal Academic Section Title */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.dark .section-title {
+  color: #f8fafc;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  background-color: var(--amarun-red);
+  border-radius: 2px;
+}
+
+/* Academic Cards */
+.academic-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.academic-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Top Institutional Banner */
+.inst-header {
+  background-color: #0f2b5c;
+  color: #ffffff;
+  border-bottom: 3px solid var(--amarun-red);
+}
+
+/* Formal Academic Badges */
+.academic-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--border-color);
+}
+
+.badge-amarun {
+  background-color: var(--amarun-red-subtle);
+  color: var(--amarun-red);
+  border-color: rgba(153, 27, 27, 0.25);
+}
+
+.badge-lama {
+  background-color: var(--navy-light);
+  color: var(--navy-primary);
+  border-color: rgba(15, 43, 92, 0.25);
+}
+
+/* KaTeX Polish */
+.katex {
+  font-size: 1.05em;
+}
+.katex-display {
+  margin: 0.75em 0;
+  padding: 0.3em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* BibTeX Box */
+.bibtex-code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background-color: var(--bg-muted);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.45;
+}
+
+/* Canvas Scientific Chart Style (Matplotlib / GNUPlot Style) */
+.scientific-canvas-container {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+/* Floating Toast */
+.toast-msg {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--navy-primary);
+  border-left: 4px solid var(--navy-primary);
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+.toast-msg.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Print Rules */
+@media print {
+  nav, footer, #interactive, .no-print, button, .actions-bar {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+  .academic-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Editorial refresh: a quieter, more legible academic interface
+   -------------------------------------------------------------------------- */
+:root {
+  --bg-base: #f5f7fb;
+  --bg-surface: #ffffff;
+  --bg-muted: #eef2f7;
+  --bg-subtle: #e8edf5;
+  --text-main: #172033;
+  --text-secondary: #40506a;
+  --text-muted: #66748b;
+  --navy-primary: #163b66;
+  --navy-hover: #0f2e50;
+  --navy-light: #eaf2fb;
+  --amarun-red: #a3423f;
+  --amarun-red-hover: #853330;
+  --amarun-red-subtle: #fbefee;
+  --border-color: #d9e1ec;
+  --border-strong: #b9c7d9;
+  --card-shadow: 0 8px 24px rgba(25, 48, 78, .06);
+  --card-shadow-hover: 0 16px 36px rgba(25, 48, 78, .12);
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(32, 87, 135, .08), transparent 28rem),
+    var(--bg-base);
+}
+
+.dark {
+  --bg-base: #091323;
+  --bg-surface: #101d31;
+  --bg-muted: #15263e;
+  --bg-subtle: #1c3150;
+  --text-main: #edf4fb;
+  --text-secondary: #c7d5e5;
+  --text-muted: #8da2bb;
+  --border-color: #243956;
+  --border-strong: #385574;
+  --navy-primary: #8bc3f3;
+  --navy-hover: #b6daf7;
+  --navy-light: rgba(107, 176, 236, .13);
+  --amarun-red: #f18b83;
+  --amarun-red-hover: #ffaaa1;
+  --amarun-red-subtle: rgba(241, 139, 131, .12);
+}
+
+.inst-header {
+  background: linear-gradient(105deg, #102e51 0%, #1d5279 58%, #7d3434 140%);
+  border-bottom: 0;
+  letter-spacing: .01em;
+}
+
+header.sticky {
+  box-shadow: 0 8px 24px rgba(19, 45, 76, .06);
+}
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.98), rgba(240,247,253,.86)),
+    var(--bg-surface) !important;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  width: 28rem;
+  height: 28rem;
+  right: -10rem;
+  top: -9rem;
+  border: 1px solid rgba(22, 59, 102, .11);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.5rem rgba(22, 59, 102, .025), 0 0 0 5rem rgba(22, 59, 102, .018);
+  pointer-events: none;
+}
+
+.dark #hero {
+  background: linear-gradient(120deg, #0d1a2c, #112744) !important;
+}
+
+#hero > div,
+#hero .max-w-7xl {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 2.7vw, 2.55rem);
+  letter-spacing: -.025em;
+}
+
+.section-title::after {
+  width: 4rem;
+  height: 4px;
+  background: linear-gradient(90deg, var(--amarun-red), #e4a09b);
+}
+
+.academic-card {
+  border-radius: .9rem;
+  box-shadow: var(--card-shadow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.academic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+#publicationsList {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#publicationsList > article:first-child {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--bg-surface), var(--navy-light));
+}
+
+.scientific-canvas-container {
+  border-radius: .9rem;
+  box-shadow: var(--card-shadow);
+}
+
+input[type="range"] {
+  accent-color: var(--amarun-red);
+}
+
+input, textarea {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #4e8dbd !important;
+  box-shadow: 0 0 0 3px rgba(78, 141, 189, .16);
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(199, 104, 97, .45);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  #publicationsList { grid-template-columns: 1fr; }
+  #publicationsList > article:first-child { grid-column: auto; }
+}
+
+@media (max-width: 640px) {
+  .inst-header .max-w-7xl > div:last-child { display: none; }
+  #hero::after { right: -16rem; }
+  .section-title { font-size: 2rem; }
+}
+

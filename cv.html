@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV acad&eacute;mico — Danny Mallitasig</title>
+  <style>
+    :root { --ink:#162238; --muted:#5f6d82; --blue:#174b73; --red:#a3423f; --line:#d9e2ed; --paper:#fff; --bg:#eef3f8; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:linear-gradient(135deg,#e8f0f7,var(--bg)); font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .toolbar { max-width:900px; margin:24px auto 0; display:flex; justify-content:space-between; gap:12px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border:1px solid var(--line); border-radius:999px; background:var(--paper); color:var(--blue); text-decoration:none; font-size:13px; font-weight:700; cursor:pointer; }
+    .btn.primary { background:var(--blue); border-color:var(--blue); color:#fff; }
+    .sheet { max-width:900px; margin:16px auto 48px; padding:64px 76px; background:var(--paper); box-shadow:0 18px 50px rgba(26,52,80,.12); border:1px solid var(--line); }
+    header { display:grid; grid-template-columns:1fr auto; gap:24px; padding-bottom:24px; border-bottom:3px solid var(--blue); }
+    h1 { margin:0; font:700 clamp(34px,5vw,52px)/1.05 Georgia,serif; letter-spacing:-.04em; color:var(--blue); }
+    .role { margin:10px 0 0; color:var(--muted); font-size:18px; }
+    .mark { width:76px; height:76px; display:grid; place-items:center; border:1px solid var(--red); color:var(--red); font:700 24px Georgia,serif; }
+    .contact { grid-column:1/-1; display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--muted); font-size:13px; }
+    a { color:var(--blue); }
+    section { margin-top:28px; }
+    h2 { margin:0 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); color:var(--blue); font:700 14px/1.2 system-ui,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+    .entry { margin:0 0 18px; }
+    .entry-head { display:flex; justify-content:space-between; gap:16px; font-weight:750; }
+    .entry-sub { display:flex; justify-content:space-between; gap:16px; color:var(--muted); font-style:italic; }
+    p { margin:0 0 10px; }
+    ul { margin:0; padding-left:20px; }
+    li { margin:0 0 8px; }
+    .note { margin-top:28px; padding:14px 16px; border-left:4px solid var(--red); background:#fff7f6; color:#514047; font-size:13px; }
+    @media (max-width:700px) { .toolbar { margin:14px 16px 0; } .sheet { margin:12px 0 24px; padding:34px 22px; border-left:0; border-right:0; } header { grid-template-columns:1fr; } .mark { display:none; } .entry-head,.entry-sub { display:block; } }
+    @media print { body { background:#fff; } .toolbar { display:none; } .sheet { margin:0; padding:0; box-shadow:none; border:0; max-width:none; } a { color:inherit; text-decoration:none; } .note { background:#fff; } }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><a class="btn" href="index.html">&larr; P&aacute;gina principal</a><button class="btn primary" type="button" onclick="window.print()">Imprimir / guardar PDF</button></div>
+  <main class="sheet">
+    <header>
+      <div><h1>Danny Mallitasig</h1><p class="role">Doctorando en matem&aacute;ticas · LAMA / UPEC</p></div><div class="mark" aria-hidden="true">DM</div>
+      <div class="contact"><span>Laboratoire d'Analyse et de Math&eacute;matiques Appliqu&eacute;es</span><span>Bureau P2 244</span><a href="mailto:danny.mallitasig@u-pec.fr">danny.mallitasig@u-pec.fr</a><a href="https://lama-umr8050.fr/membres/mallitasig.danny" target="_blank" rel="noopener noreferrer">Ficha LAMA</a><a href="https://www.theses.fr/s396655" target="_blank" rel="noopener noreferrer">Theses.fr</a></div>
+    </header>
+
+    <section><h2>Perfil</h2><p>Doctorando en matem&aacute;ticas en la Universit&eacute; Paris-Est Cr&eacute;teil (UPEC), dentro del LAMA (UMR CNRS 8050). La ficha institucional lo sit&uacute;a en el equipo de Analyse harmonique, multifractale et diophantienne.</p><p>La tesis <em>Prescription de comportements multifractals</em> est&aacute; dirigida por St&eacute;phane Seuret y Athanasios Batakis.</p></section>
+    <section><h2>&Aacute;reas de investigaci&oacute;n</h2><p>An&aacute;lisis multifractal, regularidad local, ond&iacute;culas y teor&iacute;a geom&eacute;trica de la medida.</p></section>
+    <section><h2>Formaci&oacute;n y tesis</h2>
+      <div class="entry"><div class="entry-head"><span>Doctorado en matem&aacute;ticas</span><span>Desde 2024</span></div><div class="entry-sub"><span>Universit&eacute; Paris-Est Cr&eacute;teil · LAMA</span><span>Cr&eacute;teil, Francia</span></div><p>Tesis: <em>Prescription de comportements multifractals</em>. <a href="https://www.theses.fr/s396655" target="_blank" rel="noopener noreferrer">Registro oficial</a>.</p></div>
+      <div class="entry"><div class="entry-head"><span>Master 2 — Analyse et Applications</span><span>2024</span></div><div class="entry-sub"><span>Universit&eacute; Gustave Eiffel</span><span>Francia</span></div><p>Memoria: <em>Prescription of multifractal behavior of functions and measures</em>. <a href="https://www.amarun.org/index.php/materiales/tesis-de-maestria" target="_blank" rel="noopener noreferrer">Registro AMARUN</a>.</p></div>
+    </section>
+    <section><h2>Material docente</h2><p><em>Lecciones de teor&iacute;a geom&eacute;trica de la medida</em>, Comisi&oacute;n de Pedagog&iacute;a AMARUN, 2025. <a href="https://www.amarun.org/images/amarun/materiales/EDP/teoria-medida/2025-Mallitasig-Teoria-geometrica-de-la-medida/2025-Mallitasig-Leccion1.pdf" target="_blank" rel="noopener noreferrer">Abrir lecci&oacute;n publicada</a>.</p></section>
+    <section><h2>Actividades verificadas</h2><ul><li><strong>CJC-MA 2026:</strong> incluido en el comit&eacute; de organizaci&oacute;n del congreso oficial. <a href="https://cjcma2026.sciencesconf.org/" target="_blank" rel="noopener noreferrer">Programa</a>.</li><li><strong>&Eacute;cole d'automne d'ANAIS 2025:</strong> presentaci&oacute;n registrada en el programa oficial. <a href="https://anais.math.cnrs.fr/conferences/ecole-dautomne-2025/premieres-journees-de-laxe-analyse-fonctionnelle-harmonique-et-probabilitesecole-dautomne-danais-2025-programme/" target="_blank" rel="noopener noreferrer">Programa</a>.</li><li><strong>EGMO 2026:</strong> gu&iacute;a de la delegaci&oacute;n de Eslovenia seg&uacute;n el registro oficial. <a href="https://www.egmo.org/egmos/egmo15/countries/country24/" target="_blank" rel="noopener noreferrer">Registro EGMO</a>.</li></ul></section>
+    <div class="note">Este CV resume &uacute;nicamente la informaci&oacute;n que puede comprobarse en los registros p&uacute;blicos enlazados. Las fuentes pueden actualizarse con el tiempo.</div>
+  </main>
+</body>
+</html>
+

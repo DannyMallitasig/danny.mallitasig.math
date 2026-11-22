@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="100%" height="100%">
+  <defs>
+    <!-- Formal Academic Navy Palette (AMARUN & University Mathematics) -->
+    <linearGradient id="academicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b5c" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#991b1b" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Academic Outer Frame -->
+  <rect width="360" height="360" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="12" y="12" width="336" height="336" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Subtle Mathematical Geometry (Harmonic Oscillations & Dyadic Trees) -->
+  <g opacity="0.12" stroke="#0f2b5c" stroke-width="1.2" fill="none">
+    <circle cx="180" cy="150" r="105" stroke-dasharray="3 3"/>
+    <circle cx="180" cy="150" r="75"/>
+    <circle cx="180" cy="150" r="45" stroke-dasharray="2 2"/>
+    <!-- Dyadic Partition Cascade -->
+    <line x1="75" y1="150" x2="285" y2="150"/>
+    <line x1="180" y1="45" x2="180" y2="255"/>
+  </g>
+
+  <!-- Formal Researcher Silhouette & Academic Robe/Suit -->
+  <g transform="translate(0, 10)">
+    <!-- Suit Jacket in Deep Academic Navy -->
+    <path d="M 85 320 C 85 240, 130 205, 180 205 C 230 205, 275 240, 275 320 Z" fill="#0f2b5c" stroke="#091e3e" stroke-width="2"/>
+    
+    <!-- White Dress Shirt & Collar -->
+    <path d="M 155 205 L 180 250 L 205 205 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    
+    <!-- Academic Necktie (AMARUN Bordeaux Red) -->
+    <path d="M 174 212 L 186 212 L 189 270 L 180 285 L 171 270 Z" fill="#991b1b"/>
+    <polygon points="174,212 186,212 184,222 176,222" fill="#7f1d1d"/>
+
+    <!-- Neck -->
+    <rect x="165" y="165" width="30" height="42" rx="6" fill="#f3d7c5" stroke="#e2b99f" stroke-width="1"/>
+    
+    <!-- Head Oval -->
+    <ellipse cx="180" cy="125" rx="46" ry="54" fill="#fce4d6" stroke="#e2b99f" stroke-width="1"/>
+
+    <!-- Hair (Neat Professional Academic Cut) -->
+    <path d="M 134 118 C 132 80, 150 62, 180 62 C 210 62, 228 80, 226 118 C 220 102, 210 88, 180 88 C 150 88, 140 102, 134 118 Z" fill="#1e293b"/>
+    <path d="M 134 115 C 132 95, 142 66, 180 64 C 218 66, 228 95, 226 115 C 224 88, 208 72, 180 72 C 152 72, 136 88, 134 115 Z" fill="#0f172a"/>
+
+    <!-- Academic Eyeglasses (Classic Slate Frame) -->
+    <rect x="144" y="112" width="30" height="20" rx="5" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+    <rect x="186" y="112" width="30" height="20" rx="5" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="174" y1="120" x2="186" y2="120" stroke="#1e293b" stroke-width="2.5"/>
+    <line x1="135" y1="117" x2="144" y2="119" stroke="#1e293b" stroke-width="2"/>
+    <line x1="216" y1="119" x2="225" y2="117" stroke="#1e293b" stroke-width="2"/>
+
+    <!-- Subtle Friendly Smile -->
+    <path d="M 170 152 Q 180 160, 190 152" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bottom Academic Banner -->
+  <rect x="25" y="306" width="310" height="28" rx="6" fill="#0f2b5c"/>
+  <text x="180" y="325" font-family="'EB Garamond', 'Lora', Georgia, serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="1">
+    LAMA &bull; UPEC &bull; AMARUN
+  </text>
+</svg>
+

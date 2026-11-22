@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danny Mallitasig — Investigador Doctoral en Matemáticas | LAMA, UPEC & AMARUN</title>
+  
+  <meta name="description" content="Página académica oficial de Danny Mallitasig, doctorant en mathématiques en el Laboratoire d'Analyse et de Mathématiques Appliquées (LAMA - UMR CNRS 8050), Université Paris-Est Créteil (UPEC) y miembro activo de AMARUN.">
+  <meta name="keywords" content="Danny Mallitasig, Analyse Multifractale, LAMA, UPEC, CNRS, AMARUN, Stéphane Seuret, Athanasios Batakis, Wavelet Leaders, EPN Ecuador, Geometric Measure Theory">
+  <meta name="author" content="Danny Mallitasig">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Danny Mallitasig — Doctorant en Mathématiques | LAMA (UMR CNRS 8050)">
+  <meta property="og:description" content="Analyse Harmonique, Analyse Multifractale et Théorie Géométrique de la Mesure à l'Université Paris-Est Créteil et AMARUN.">
+  <meta property="og:image" content="assets/avatar.svg">
+
+  <!-- Structured Academic Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Danny Mallitasig",
+    "jobTitle": "Doctorant en Mathématiques",
+    "worksFor": {
+      "@type": "EducationalOrganization",
+      "name": "Université Paris-Est Créteil (UPEC)",
+      "department": "Laboratoire d'Analyse et de Mathématiques Appliquées (LAMA - UMR CNRS 8050)",
+      "url": "https://lama-umr8050.fr/"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Université Gustave Eiffel",
+        "url": "https://www.univ-gustave-eiffel.fr/"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Escuela Politécnica Nacional",
+        "url": "https://www.epn.edu.ec/"
+      }
+    ],
+    "email": "danny.mallitasig@u-pec.fr",
+    "sameAs": [
+      "https://www.theses.fr/s396655",
+      "https://lama-umr8050.fr/",
+      "https://www.amarun.org/"
+    ],
+    "knowsAbout": [
+      "Harmonic Analysis",
+      "Multifractal Analysis",
+      "Wavelet Leaders",
+      "Geometric Measure Theory",
+      "Harmonic Measure"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['EB Garamond', 'Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace']
+          },
+          colors: {
+            amarun: {
+              red: '#991b1b',
+              navy: '#0f2b5c',
+              light: '#f8fafc'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- KaTeX for exact math typesetting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen text-slate-900 dark:text-slate-100 bg-[#fcfcfd] dark:bg-[#0a1128] transition-colors duration-200">
+
+  <!-- ========================================================================
+       MAIN NAVIGATION BAR
+       ======================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0f1a36]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Brand Title -->
+        <a href="#hero" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded bg-[#0f2b5c] dark:bg-blue-900 text-white font-serif font-bold text-lg flex items-center justify-center border border-slate-300 dark:border-slate-700">
+            DM
+          </div>
+          <div>
+            <span class="font-serif font-bold text-base tracking-tight text-[#0f2b5c] dark:text-slate-100 block">
+              Danny Mallitasig
+            </span>
+            <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400 block -mt-0.5">
+              Doctorant en Mathématiques &bull; UPEC
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <a href="#about" data-i18n="nav.about" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Biografía</a>
+          <a href="#research" data-i18n="nav.research" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Investigación</a>
+          <a href="#interactive" data-i18n="nav.interactive" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Simulador</a>
+          <a href="#publications" data-i18n="nav.publications" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Publicaciones</a>
+          <a href="#talks" data-i18n="nav.talks" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Charlas</a>
+          <a href="#teaching" data-i18n="nav.teaching" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Docencia</a>
+          <a href="#cv" data-i18n="nav.cv" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Trayectoria</a>
+          <a href="#contact" data-i18n="nav.contact" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Right Utilities: Language Selector, Theme Switch, CV Link -->
+        <div class="flex items-center gap-2.5">
+          
+          <!-- Trilingual Switcher (ES / EN / FR) -->
+          <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded border border-slate-300 dark:border-slate-700 text-xs">
+            <button class="lang-btn px-2 py-0.5 rounded font-bold" data-lang="es">ES</button>
+            <button class="lang-btn px-2 py-0.5 rounded font-bold" data-lang="en">EN</button>
+            <button class="lang-btn px-2 py-0.5 rounded font-bold" data-lang="fr">FR</button>
+          </div>
+
+          <!-- Theme Button -->
+          <button id="themeToggle" aria-label="Cambiar tema" class="p-1.5 rounded border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+            <i data-lucide="sun" class="theme-icon-sun w-3.5 h-3.5 hidden"></i>
+            <i data-lucide="moon" class="theme-icon-moon w-3.5 h-3.5"></i>
+          </button>
+
+          <!-- Formal CV Link -->
+          <a href="cv.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white border border-[#0f2b5c] transition-colors">
+            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+            <span data-i18n="nav.downloadCv">Curriculum Vitae</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button id="mobileMenuBtn" aria-label="Menu" class="lg:hidden p-1.5 rounded border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+            <i data-lucide="menu" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f1a36] px-4 py-3 space-y-2 text-xs font-semibold uppercase">
+      <a href="#about" data-i18n="nav.about" class="block py-1 text-slate-700 dark:text-slate-300">Biografía</a>
+      <a href="#research" data-i18n="nav.research" class="block py-1 text-slate-700 dark:text-slate-300">Investigación</a>
+      <a href="#interactive" data-i18n="nav.interactive" class="block py-1 text-slate-700 dark:text-slate-300">Simulador</a>
+      <a href="#publications" data-i18n="nav.publications" class="block py-1 text-slate-700 dark:text-slate-300">Publicaciones</a>
+      <a href="#talks" data-i18n="nav.talks" class="block py-1 text-slate-700 dark:text-slate-300">Charlas</a>
+      <a href="#teaching" data-i18n="nav.teaching" class="block py-1 text-slate-700 dark:text-slate-300">Docencia</a>
+      <a href="#cv" data-i18n="nav.cv" class="block py-1 text-slate-700 dark:text-slate-300">Trayectoria</a>
+      <a href="#contact" data-i18n="nav.contact" class="block py-1 text-slate-700 dark:text-slate-300">Contacto</a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO / FORMAL ACADEMIC PRESENTATION
+       ======================================================================== -->
+  <section id="hero" class="py-12 md:py-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0e1730]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Column: Formal Info -->
+        <div class="lg:col-span-8 space-y-4">
+          
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="academic-badge bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-200 border-blue-200 dark:border-blue-800">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5 text-blue-700"></i>
+              <span data-i18n="hero.statusBadge">Doctorado en curso (Iniciado en octubre 2024)</span>
+            </span>
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border-slate-300 dark:border-slate-700">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-700"></i>
+              <span data-i18n="hero.officeBadge">Despacho: Bureau P2 244 (Campus Centre UPEC)</span>
+            </span>
+          </div>
+
+          <div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-[#0f2b5c] dark:text-white tracking-tight mb-1" data-i18n="hero.name">
+              Danny Mallitasig
+            </h1>
+            <p class="text-lg font-medium text-slate-700 dark:text-slate-300 font-serif italic" data-i18n="hero.role">
+              Investigador Doctoral en Matemáticas
+            </p>
+          </div>
+
+          <!-- Verified Affiliations -->
+          <div class="space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <p class="flex items-start gap-2">
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Laboratorio:</span>
+              <span><a href="https://lama-umr8050.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 font-semibold hover:underline">Laboratoire d'Analyse et de Mathématiques Appliquées (LAMA — UMR CNRS 8050)</a></span>
+            </p>
+            <p class="flex items-start gap-2">
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Equipo:</span>
+              <span data-i18n="hero.team">Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)</span>
+            </p>
+            <p class="flex items-start gap-2">
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Institución:</span>
+              <span><a href="https://www.u-pec.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Université Paris-Est Créteil (UPEC)</a> &bull; <a href="https://www.idpoisson.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Université d'Orléans (IDP)</a></span>
+            </p>
+            <p class="flex items-start gap-2">
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Asociación:</span>
+              <span><a href="https://www.amarun.org/" target="_blank" rel="noopener noreferrer" class="text-red-800 dark:text-red-400 font-semibold hover:underline">Asociación de Científicos AMARUN (París — Quito)</a></span>
+            </p>
+          </div>
+
+          <!-- Academic summary -->
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed pt-1" data-i18n="hero.bioBrief">
+            Investigo en Análisis Armónico, Análisis Multifractal, Teoría Geométrica de la Medida y Ondículas. Mi tesis doctoral se titula <em>Prescription de comportements multifractals</em>, bajo la dirección de Stéphane Seuret y Athanasios Batakis.
+          </p>
+
+          <!-- Buttons -->
+          <div class="pt-3 flex flex-wrap items-center gap-2.5">
+            <a href="https://www.theses.fr/s396655" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded text-xs font-semibold bg-red-800 hover:bg-red-900 text-white flex items-center gap-1.5 border border-red-900 shadow-sm transition-colors">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span data-i18n="hero.thesesRecord">Ficha oficial en Theses.fr</span>
+            </a>
+
+            <a href="cv.html" target="_blank" class="px-3.5 py-2 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white flex items-center gap-1.5 border border-[#0f2b5c] shadow-sm transition-colors">
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              <span data-i18n="hero.btnDownloadCv">Curriculum Vitae</span>
+            </a>
+
+            <button onclick="app.copyEmail()" class="px-3.5 py-2 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5">
+              <i data-lucide="copy" class="w-3.5 h-3.5 text-blue-800 dark:text-blue-400"></i>
+              <span data-i18n="hero.copyEmail">Copiar correo institucional</span>
+            </button>
+          </div>
+
+          <!-- Verified Institutional Links Row -->
+          <div class="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-3">
+            <span class="font-bold text-slate-700 dark:text-slate-300">Enlaces Verificados:</span>
+            <a href="https://lama-umr8050.fr/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1">
+              <span>LAMA UMR 8050</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+            <a href="https://www.theses.fr/s396655" target="_blank" rel="noopener noreferrer" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1">
+              <span>Theses.fr</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+            <a href="https://www.amarun.org/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1">
+              <span>AMARUN</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+            <a href="https://www.epn.edu.ec/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1">
+              <span>EPN Quito</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+            <a href="https://www.idpoisson.fr/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1">
+              <span>IDP Orléans</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Formal Academic Insignia -->
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="w-64 sm:w-72 bg-white dark:bg-[#111c38] p-3 rounded border border-slate-300 dark:border-slate-700 shadow-sm text-center">
+            <img src="assets/avatar.svg" alt="Danny Mallitasig" class="w-full h-auto rounded border border-slate-200 dark:border-slate-800 mb-3 bg-slate-50">
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-2">
+              <span class="text-xs font-serif font-bold text-[#0f2b5c] dark:text-blue-300 block">
+                Danny Mallitasig
+              </span>
+              <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400 block">
+                danny.mallitasig@u-pec.fr
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BIOGRAPHY & PHD FRAMEWORK
+       ======================================================================== -->
+  <section id="about" class="py-14 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <h2 class="section-title" data-i18n="about.title">Biografía Académica</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold" data-i18n="about.subtitle">
+          Formación, filiación institucional y marco científico
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Narrative Bio -->
+        <div class="lg:col-span-7 space-y-3.5 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <p data-i18n="about.p3"></p>
+          <p data-i18n="about.p4"></p>
+        </div>
+
+        <!-- Official PhD Card & Quick Facts -->
+        <div class="lg:col-span-5 space-y-5">
+          
+          <!-- Theses.fr Card -->
+          <div class="academic-card p-5 border-l-4 border-red-800 bg-red-50/30 dark:bg-red-950/20">
+            <div class="flex items-center justify-between text-xs font-semibold text-red-900 dark:text-red-300 mb-2">
+              <span class="flex items-center gap-1.5 uppercase font-bold tracking-wider">
+                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                <span data-i18n="about.thesisCardTitle">Tesis Doctoral Registrada (Theses.fr)</span>
+              </span>
+              <span class="font-mono text-[10px]">s396655</span>
+            </div>
+            
+            <h3 class="text-base font-serif font-bold text-slate-950 dark:text-white mb-1" data-i18n="about.thesisTitle">
+              Prescription de comportements multifractals
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 italic mb-2" data-i18n="about.thesisTitleTrans">
+              (Prescription of multifractal behaviors)
+            </p>
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-medium mb-3" data-i18n="about.thesisDirectors"></p>
+
+            <a href="https://www.theses.fr/s396655" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-red-800 dark:text-red-400 hover:underline">
+              <span data-i18n="about.thesesUrlLabel">Ver registro en el portal nacional francés Theses.fr</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <!-- Quick facts -->
+          <div class="academic-card p-5">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-1.5">
+              <i data-lucide="check-square" class="w-4 h-4 text-blue-900 dark:text-blue-400"></i>
+              <span data-i18n="about.quickFactsTitle">Datos Académicos Verificados</span>
+            </h3>
+            <ul id="factsList" class="divide-y divide-slate-100 dark:divide-slate-800"></ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       RESEARCH TOPICS
+       ======================================================================== -->
+  <section id="research" class="py-14 bg-slate-50/70 dark:bg-[#0c142b] border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-8">
+        <h2 class="section-title" data-i18n="research.title">Líneas de Investigación</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold mb-3" data-i18n="research.subtitle">
+          Análisis armónico, geometría fractal y regularidad puntual
+        </p>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="research.intro"></p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Topic 1 -->
+        <div class="academic-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded bg-[#0f2b5c] text-white flex items-center justify-center mb-4">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold font-serif text-[#0f2b5c] dark:text-blue-300 mb-2">
+              Análisis Multifractal & Prescripción
+            </h3>
+            <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              Clasificación de singularidades locales vía exponentes de Hölder $h(x)$. Prescripción rigurosa del espectro de Hausdorff $d(\alpha) = \dim_{\mathcal{H}}(E_\alpha)$ para tuplas continuas y espectros bivariados.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1">
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">Dimensión Hausdorff</span>
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">Espectros Bivariados</span>
+          </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="academic-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded bg-blue-900 text-white flex items-center justify-center mb-4">
+              <i data-lucide="git-commit" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold font-serif text-[#0f2b5c] dark:text-blue-300 mb-2">
+              Líderes de Ondículas & Regularidad
+            </h3>
+            <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              Uso canónico de coeficientes y líderes de ondículas $d_\lambda$ para medir regularidad puntual y normas de espacios de Besov $B_{p,q}^s$. Métodos constructivos multiescala para síntesis funcional.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1">
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">Wavelet Leaders</span>
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">Espacios de Besov</span>
+          </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="academic-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded bg-red-800 text-white flex items-center justify-center mb-4">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold font-serif text-[#0f2b5c] dark:text-blue-300 mb-2">
+              Teoría Geométrica & Medida Armónica
+            </h3>
+            <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              Comportamiento multifractal de la medida armónica $\omega$ en fronteras autosimilares y no suaves $\partial\Omega$. Cálculo de dimensiones de empaquetamiento y formalismo termodinámico.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1">
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">Medida Armónica</span>
+            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300">Lema de Frostman</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SCIENTIFIC INTERACTIVE CALCULATOR (No Neon, Formal GNUPlot/Matplotlib aesthetic)
+       ======================================================================== -->
+  <section id="interactive" class="py-14 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-8">
+        <span class="academic-badge bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-300 border-blue-200 dark:border-blue-800 mb-2" data-i18n="interactive.badge">
+          Simulador Científico
+        </span>
+        <h2 class="section-title block" data-i18n="interactive.title">Cálculo del Espectro Multifractal</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold mb-2" data-i18n="interactive.subtitle">
+          Modelo de medida binomial autosimilar y transformada de Legendre
+        </p>
+        <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed" data-i18n="interactive.desc"></p>
+      </div>
+
+      <!-- Controls -->
+      <div class="academic-card p-5 mb-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <div class="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+              <label for="paramP" data-i18n="interactive.paramP">Probabilidad generadora (p):</label>
+              <span id="valP" class="font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">0.70</span>
+            </div>
+            <input type="range" id="paramP" min="0.05" max="0.95" step="0.01" value="0.70" class="w-full">
+            <div class="flex justify-between text-[10px] font-mono text-slate-400 mt-0.5">
+              <span>0.05 (Extremo)</span>
+              <span>0.50 (Medida plana de Lebesgue)</span>
+              <span>0.95 (Extremo)</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+              <label for="paramDepth" data-i18n="interactive.paramDepth">Profundidad de cascada diádica (k):</label>
+              <span id="valDepth" class="font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-300 dark:border-slate-700">6</span>
+            </div>
+            <input type="range" id="paramDepth" min="3" max="8" step="1" value="6" class="w-full">
+            <div class="flex justify-between text-[10px] font-mono text-slate-400 mt-0.5">
+              <span>k = 3 (8 intervalos)</span>
+              <span>k = 6 (64 intervalos)</span>
+              <span>k = 8 (256 intervalos)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Scientific Graphs -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-4">
+        <div class="scientific-canvas-container">
+          <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200">
+            <span data-i18n="interactive.densityPlotTitle">Densidad de la Medida Fractal dμ_k/dx en [0, 1]</span>
+            <span class="font-mono text-[10px] text-slate-400">Escala [0, 1]</span>
+          </div>
+          <canvas id="densityCanvas"></canvas>
+        </div>
+
+        <div class="scientific-canvas-container">
+          <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200">
+            <span data-i18n="interactive.spectrumPlotTitle">Espectro de Hausdorff f(α) = dim_H(E_α)</span>
+            <span class="font-mono text-[10px] text-slate-400">Convexidad de Legendre</span>
+          </div>
+          <canvas id="spectrumCanvas"></canvas>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="academic-card p-3">
+          <span class="text-[11px] text-slate-500 font-semibold block" data-i18n="interactive.alphaMin">α mín</span>
+          <span id="statAlphaMin" class="font-mono font-bold text-sm text-[#0f2b5c] dark:text-blue-400">0.515</span>
+        </div>
+        <div class="academic-card p-3">
+          <span class="text-[11px] text-slate-500 font-semibold block" data-i18n="interactive.fMax">dim soporte</span>
+          <span id="statDimSupport" class="font-mono font-bold text-sm text-red-800 dark:text-red-400">1.000</span>
+        </div>
+        <div class="academic-card p-3">
+          <span class="text-[11px] text-slate-500 font-semibold block" data-i18n="interactive.alphaMax">α máx</span>
+          <span id="statAlphaMax" class="font-mono font-bold text-sm text-[#0f2b5c] dark:text-blue-400">1.737</span>
+        </div>
+      </div>
+
+      <p class="text-xs text-center text-slate-500 dark:text-slate-400 italic pt-3" data-i18n="interactive.legend"></p>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PUBLICATIONS, THESES & PEDAGOGY
+       ======================================================================== -->
+  <section id="publications" class="py-14 bg-slate-50/70 dark:bg-[#0c142b] border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <h2 class="section-title" data-i18n="publications.title">Producción Científica & Tesis</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold" data-i18n="publications.subtitle">
+            Investigaciones doctorales, tesis de maestría y monografías pedagógicas
+          </p>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="flex items-center gap-1.5 bg-slate-200/80 dark:bg-slate-800 p-1 rounded text-xs">
+          <button class="pub-filter-btn px-3 py-1 rounded font-semibold bg-blue-950 text-white transition-all" data-filter="all" data-i18n="publications.filterAll">Todos</button>
+          <button class="pub-filter-btn px-3 py-1 rounded font-semibold bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-300 transition-all" data-filter="thesis" data-i18n="publications.filterThesis">Tesis Académicas</button>
+          <button class="pub-filter-btn px-3 py-1 rounded font-semibold bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-300 transition-all" data-filter="preprint" data-i18n="publications.filterPreprints">Preprints & Artículos</button>
+          <button class="pub-filter-btn px-3 py-1 rounded font-semibold bg-white text-slate-700 dark:bg-slate-800 dark:text-slate-300 transition-all" data-filter="pedagogy" data-i18n="publications.filterPedagogy">Monografías AMARUN</button>
+        </div>
+      </div>
+
+      <!-- Publications List -->
+      <div id="publicationsList" class="grid grid-cols-1 gap-5"></div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONFERENCES & TALKS
+       ======================================================================== -->
+  <section id="talks" class="py-14 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <h2 class="section-title" data-i18n="talks.title">Conferencias, Congresos & Seminarios</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold" data-i18n="talks.subtitle">
+          Actividades de difusión en la comunidad matemática internacional
+        </p>
+      </div>
+
+      <div id="talksList" class="space-y-4"></div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       TEACHING & OUTREACH
+       ======================================================================== -->
+  <section id="teaching" class="py-14 bg-slate-50/70 dark:bg-[#0c142b] border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <h2 class="section-title" data-i18n="teaching.title">Docencia, AMARUN & Divulgación</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold" data-i18n="teaching.subtitle">
+          Responsabilidades pedagógicas, escuelas científicas y olimpiadas
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-base font-bold font-serif text-[#0f2b5c] dark:text-blue-300 mb-3 flex items-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-blue-900 dark:text-blue-400"></i>
+            <span data-i18n="teaching.universityTitle">Enseñanza Universitaria</span>
+          </h3>
+          <div id="coursesList" class="space-y-3.5"></div>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold font-serif text-[#0f2b5c] dark:text-blue-300 mb-3 flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-red-800 dark:text-red-400"></i>
+            <span data-i18n="teaching.outreachTitle">Actividades AMARUN & Competencias</span>
+          </h3>
+          <div id="outreachList" class="space-y-3.5"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ACADEMIC TIMELINE / CV
+       ======================================================================== -->
+  <section id="cv" class="py-14 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+        <div>
+          <h2 class="section-title" data-i18n="cvSection.title">Trayectoria Académica</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold" data-i18n="cvSection.subtitle">
+            Formación de excelencia, títulos e hitos contrastados
+          </p>
+        </div>
+
+        <a href="cv.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white transition-colors self-start sm:self-auto">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span data-i18n="hero.btnDownloadCv">Descargar CV Académico</span>
+        </a>
+      </div>
+
+      <div class="max-w-3xl">
+        <div id="timelineList" class="space-y-1"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONTACT & OFFICE
+       ======================================================================== -->
+  <section id="contact" class="py-14 bg-slate-50/70 dark:bg-[#0c142b] border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <h2 class="section-title" data-i18n="contact.title">Contacto & Ubicación Institucional</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold" data-i18n="contact.subtitle">
+          Dirección oficial del laboratorio y correspondencia
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Office details -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="academic-card p-5 space-y-2">
+            <h3 class="text-sm font-bold font-serif text-[#0f2b5c] dark:text-white flex items-center gap-2" data-i18n="contact.officeTitle">
+              <i data-lucide="map-pin" class="w-4 h-4 text-red-800"></i>
+              <span>Despacho en UPEC / LAMA</span>
+            </h3>
+            <p class="text-xs font-mono text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line" data-i18n="contact.officeDesc"></p>
+          </div>
+
+          <div class="academic-card p-5 space-y-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-2" data-i18n="contact.emailLabel">
+              <i data-lucide="mail" class="w-4 h-4 text-blue-900"></i>
+              <span>Correo Electrónico Institucional</span>
+            </h3>
+            <div class="flex items-center justify-between bg-slate-100 dark:bg-slate-800 p-2.5 rounded border border-slate-200 dark:border-slate-700">
+              <a href="mailto:danny.mallitasig@u-pec.fr" class="font-mono text-xs font-bold text-blue-900 dark:text-blue-400 hover:underline">
+                danny.mallitasig@u-pec.fr
+              </a>
+              <button onclick="app.copyEmail()" title="Copiar correo" class="p-1 text-slate-600 hover:text-blue-900">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="academic-card p-5 space-y-1">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300" data-i18n="contact.hoursLabel">
+              Atención Académica
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400" data-i18n="contact.hoursVal">
+              Lunes a Viernes (coordinación previa por correo electrónico)
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Academic Form -->
+        <div class="lg:col-span-7">
+          <div class="academic-card p-6 sm:p-7">
+            <h3 class="text-base font-bold font-serif text-[#0f2b5c] dark:text-white mb-4" data-i18n="contact.formTitle">
+              Envío de Mensaje Académico
+            </h3>
+            <form id="contactForm" class="space-y-3.5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nombre</label>
+                  <input type="text" name="name" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.namePlaceholder">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Correo Electrónico</label>
+                  <input type="email" name="email" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.emailPlaceholder">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Asunto</label>
+                <input type="text" name="subject" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.subjectPlaceholder">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Mensaje</label>
+                <textarea name="message" rows="4" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.msgPlaceholder"></textarea>
+              </div>
+              <button type="submit" class="px-5 py-2 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white flex items-center gap-1.5 transition-colors">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span data-i18n="contact.sendBtn">Enviar Vía Correo Electrónico</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="py-8 bg-slate-100 dark:bg-[#070d1e] text-xs text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <div>
+        <p class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="footer.copyright">
+          Danny Mallitasig — Doctorant en Mathématiques, LAMA (UMR CNRS 8050).
+        </p>
+        <p class="font-mono text-[11px] text-slate-500 mt-0.5" data-i18n="footer.affiliations">
+          Université Paris-Est Créteil &bull; Université d'Orléans &bull; AMARUN &bull; EPN Ecuador
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1 font-semibold">
+          <span>Subir al inicio</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       BIBTEX MODAL
+       ======================================================================== -->
+  <div id="bibtexModal" class="hidden fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg max-w-xl w-full p-5 shadow-xl relative">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-3">
+        <h3 class="font-serif font-bold text-sm text-[#0f2b5c] dark:text-white flex items-center gap-2">
+          <i data-lucide="quote" class="w-4 h-4 text-red-800"></i>
+          <span>Cita en Formato BibTeX</span>
+        </h3>
+        <button onclick="app.closeBibtex()" class="text-slate-400 hover:text-slate-700 p-1">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <pre id="bibtexCode" class="bibtex-code mb-4"></pre>
+
+      <div class="flex justify-end gap-2">
+        <button onclick="app.closeBibtex()" class="px-3 py-1.5 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+          Cerrar
+        </button>
+        <button onclick="app.copyCurrentBibtex()" class="px-3 py-1.5 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white flex items-center gap-1.5">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>Copiar BibTeX</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast-msg">
+    <i data-lucide="check-circle" class="w-4 h-4 text-blue-900 dark:text-blue-400"></i>
+    <span id="toastText">Mensaje copiado</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/multifractal-canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
