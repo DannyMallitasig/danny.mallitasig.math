@@ -231,7 +231,7 @@ class AcademicApp {
             ${talk.title}
           </h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-700"></i> ${talk.place} &bull; <span class="font-semibold">${talk.org}</span>
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-700"></i> ${talk.place}
           </p>
         </div>
         ${talk.link ? `<div class="shrink-0">
@@ -465,4 +465,3 @@ class AcademicApp {
 
 const app = new AcademicApp();
 window.app = app;
-
