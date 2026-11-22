@@ -1,6 +1,6 @@
 /* Public, source-backed content for Danny Mallitasig's academic profile. */
 const sources = {
-  thesis: "https://www.theses.fr/s396655",
+  thesis: "https://theses.fr/s400774",
   lama: "https://lama-umr8050.fr/membres/mallitasig.danny",
   amarunThesis: "https://www.amarun.org/index.php/materiales/tesis-de-maestria",
   amarunLesson: "https://www.amarun.org/images/amarun/materiales/EDP/teoria-medida/2025-Mallitasig-Teoria-geometrica-de-la-medida/2025-Mallitasig-Leccion1.pdf",
