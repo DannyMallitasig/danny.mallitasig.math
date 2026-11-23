@@ -142,7 +142,7 @@ function cvTalkItems(lang) {
 }
 
 function cvTeachingItems(lang) {
-  const labels = lang === "es" ? { present: "Presente", course: "Curso", committee: "Comit&eacute; cient&iacute;fico", vice: "Vicepresidencia de divulgaci&oacute;n" } : lang === "en" ? { present: "Present", course: "Course", committee: "Scientific committee", vice: "Vice President of Outreach" } : { present: "Pr&eacute;sent", course: "Cours", committee: "Comit&eacute; scientifique", vice: "Vice-pr&eacute;sidence de la m&eacute;diation" };
+  const labels = lang === "es" ? { present: "Presente", course: "Curso", committee: "Comit&eacute; cient&iacute;fico", vice: "Vicepresidencia de divulgaci&oacute;n" } : lang === "en" ? { present: "Present", course: "Course", committee: "Scientific committee member", vice: "Vice President of Outreach" } : { present: "Pr&eacute;sent", course: "Cours", committee: "Comit&eacute; scientifique", vice: "Vice-pr&eacute;sidence de la m&eacute;diation" };
   return {
     courses: [
       { name: "Calculus 2", institution: "L1 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2026", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
@@ -152,7 +152,7 @@ function cvTeachingItems(lang) {
     ],
     outreach: [
       { name: "Congr&egrave;s des Jeunes Chercheur.e.s en Math&eacute;matiques Appliqu&eacute;es (CJC-MA)", role: labels.committee, link: sources.cjc, desc: "Le CV indique la participation au comit&eacute; scientifique en 2026." },
-      { name: "Association of Mathematics and Applied Mathematics Students", role: labels.vice, link: sources.epn, desc: "Vicepresidencia de divulgaci&oacute;n durante 2022–2023 en la Escuela Polit&eacute;cnica Nacional." }
+      { name: "Association of Mathematics and Applied Mathematics Students", role: labels.vice, desc: "Vicepresidencia de divulgaci&oacute;n durante 2022–2023 en la Escuela Polit&eacute;cnica Nacional." }
     ]
   };
 }
