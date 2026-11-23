@@ -86,6 +86,17 @@ class AcademicApp {
       }
     });
 
+    document.querySelectorAll('[data-i18n-aria-label], [data-i18n-title]').forEach(el => {
+      const attribute = el.hasAttribute('data-i18n-aria-label') ? 'aria-label' : 'title';
+      const key = el.getAttribute(`data-i18n-${attribute}`);
+      const path = key.split('.');
+      let val = t;
+      for (const p of path) {
+        if (val) val = val[p];
+      }
+      if (val !== undefined) el.setAttribute(attribute, val);
+    });
+
     // Update language buttons styling
     document.querySelectorAll('.lang-btn').forEach(btn => {
       const btnLang = btn.getAttribute('data-lang');
@@ -128,7 +139,8 @@ class AcademicApp {
     if (!idpLink) return;
     const row = idpLink.closest('p');
     if (!row) return;
-    row.innerHTML = '<span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Instituci&oacute;n:</span><span><a href="https://www.u-pec.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Universit&eacute; Paris-Est Cr&eacute;teil (UPEC)</a></span>';
+    const label = translations[this.currentLang].hero.institutionLabel || 'Institution:';
+    row.innerHTML = `<span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">${label}</span><span><a href="https://www.u-pec.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Universit&eacute; Paris-Est Cr&eacute;teil (UPEC)</a></span>`;
   }
 
   renderPublications() {
@@ -146,10 +158,11 @@ class AcademicApp {
       btn.classList.toggle('hidden', !available);
     });
 
+    const badgeLabels = t.badges || { thesis: 'Academic thesis', preprint: 'Preprint / research', pedagogy: 'AMARUN teaching monograph' };
     const typeBadges = {
-      thesis: { label: 'Tesis Académica', class: 'border-amber-600/40 text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40' },
-      preprint: { label: 'Preprint / Investigación', class: 'border-blue-700/40 text-blue-900 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40' },
-      pedagogy: { label: 'Monografía Docente AMARUN', class: 'border-red-700/40 text-red-900 dark:text-red-300 bg-red-50 dark:bg-red-950/40' }
+      thesis: { label: badgeLabels.thesis, class: 'border-amber-600/40 text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40' },
+      preprint: { label: badgeLabels.preprint, class: 'border-blue-700/40 text-blue-900 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/40' },
+      pedagogy: { label: badgeLabels.pedagogy, class: 'border-red-700/40 text-red-900 dark:text-red-300 bg-red-50 dark:bg-red-950/40' }
     };
 
     container.innerHTML = filtered.map(pub => {
@@ -202,7 +215,7 @@ class AcademicApp {
             ${pub.officialUrl ? `
               <a href="${pub.officialUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded text-xs font-medium bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 text-blue-900 dark:text-blue-300 flex items-center gap-1.5 border border-blue-200 dark:border-blue-800 transition-colors">
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                <span>${pub.type === 'thesis' && pub.id === 'pub-phd-thesis' ? t.viewThesesFr : (pub.type === 'thesis' ? t.viewAmarunRecord : 'Ver Enlace Oficial')}</span>
+                <span>${pub.type === 'thesis' && pub.id === 'pub-phd-thesis' ? t.viewThesesFr : (pub.type === 'thesis' ? t.viewAmarunRecord : t.viewOfficial)}</span>
               </a>
             ` : ''}
           </div>
@@ -213,12 +226,30 @@ class AcademicApp {
     if (window.lucide) window.lucide.createIcons();
   }
 
+  localizeEnglishTalk(talk) {
+    const replacements = [
+      ['B&eacute;lgica', 'Belgium'],
+      ['Hungr&iacute;a', 'Hungary'],
+      ['Francia', 'France'],
+      ['Polonia', 'Poland'],
+      ['Reino Unido', 'United Kingdom'],
+      ['Par&iacute;s', 'Paris'],
+      ['Varsovia', 'Warsaw'],
+      ['Isla de Porquerolles', 'Porquerolles Island'],
+      ['Cada seis semanas', 'Every six weeks'],
+      ['Mensual', 'Monthly']
+    ];
+    const localize = value => replacements.reduce((result, [from, to]) => result.replaceAll(from, to), value);
+    return { ...talk, place: localize(talk.place), date: localize(talk.date) };
+  }
+
   renderTalks() {
     const container = document.getElementById('talksList');
     if (!container) return;
     const t = translations[this.currentLang].talks;
 
-    container.innerHTML = t.items.map(talk => `
+    const talkItems = t.items.map(talk => this.currentLang === 'en' ? this.localizeEnglishTalk(talk) : talk);
+    container.innerHTML = talkItems.map(talk => `
       <div class="academic-card p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div class="space-y-1.5">
           <div class="flex flex-wrap items-center gap-2">
@@ -237,7 +268,7 @@ class AcademicApp {
         ${talk.link ? `<div class="shrink-0">
           <a href="${talk.link}" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto px-3.5 py-2 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5 border border-slate-300 dark:border-slate-700 transition-colors">
             <i data-lucide="external-link" class="w-3.5 h-3.5 text-blue-700"></i>
-            <span>Sitio Oficial</span>
+            <span>${translations[this.currentLang].ui.officialSite}</span>
           </a>
         </div>` : ''}
       </div>
@@ -270,7 +301,7 @@ class AcademicApp {
           </span>
           ${o.link ? `
             <a href="${o.link}" target="_blank" rel="noopener noreferrer" class="text-xs text-blue-800 dark:text-blue-400 hover:underline flex items-center gap-1">
-              <span>Sitio web</span>
+              <span>${translations[this.currentLang].ui.website}</span>
               <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           ` : ''}
@@ -368,12 +399,12 @@ class AcademicApp {
   copyCurrentBibtex() {
     const content = document.getElementById('bibtexCode');
     if (!content) return;
-    this.copyToClipboard(content.textContent, "Cita BibTeX copiada al portapapeles");
+    this.copyToClipboard(content.textContent, translations[this.currentLang].ui.bibtexCopied);
   }
 
   copyEmail() {
     const email = "danny.mallitasig@u-pec.fr";
-    const msg = translations[this.currentLang].hero.emailCopied || "Correo copiado al portapapeles";
+    const msg = translations[this.currentLang].hero.emailCopied || translations[this.currentLang].ui.emailCopied;
     this.copyToClipboard(email, msg);
   }
 
@@ -409,14 +440,14 @@ class AcademicApp {
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
-    const subject = form.subject.value || "Contacto Académico";
+    const t = translations[this.currentLang].contact;
+    const subject = form.subject.value || t.defaultSubject;
     const message = form.message.value;
 
-    const mailtoUrl = `mailto:danny.mallitasig@u-pec.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("De: " + name + " <" + email + ">\n\n" + message)}`;
+    const mailtoUrl = `mailto:danny.mallitasig@u-pec.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(t.mailFrom + ": " + name + " <" + email + ">\n\n" + message)}`;
     window.location.href = mailtoUrl;
 
-    const t = translations[this.currentLang].contact;
-    this.showToast(t.successMsg || "Borrador preparado en tu cliente de correo");
+    this.showToast(t.successMsg || t.draftFallback);
     form.reset();
   }
 
