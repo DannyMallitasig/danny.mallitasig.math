@@ -279,6 +279,7 @@ class AcademicApp {
           ` : ''}
         </div>
         <h4 class="text-base font-bold font-serif text-slate-900 dark:text-slate-100">${o.name}</h4>
+        ${o.desc ? `<p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">${o.desc}</p>` : ''}
       </div>
     `).join('');
   }
