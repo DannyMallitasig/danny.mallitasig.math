@@ -106,7 +106,6 @@
           <a href="#publications" data-i18n="nav.publications" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Publicaciones</a>
           <a href="#talks" data-i18n="nav.talks" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Charlas</a>
           <a href="#teaching" data-i18n="nav.teaching" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Docencia</a>
-          <a href="#cv" data-i18n="nav.cv" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Trayectoria</a>
           <a href="#contact" data-i18n="nav.contact" class="hover:text-blue-900 dark:hover:text-blue-400 transition-colors">Contacto</a>
         </nav>
 
@@ -147,7 +146,6 @@
       <a href="#publications" data-i18n="nav.publications" class="block py-1 text-slate-700 dark:text-slate-300">Publicaciones</a>
       <a href="#talks" data-i18n="nav.talks" class="block py-1 text-slate-700 dark:text-slate-300">Charlas</a>
       <a href="#teaching" data-i18n="nav.teaching" class="block py-1 text-slate-700 dark:text-slate-300">Docencia</a>
-      <a href="#cv" data-i18n="nav.cv" class="block py-1 text-slate-700 dark:text-slate-300">Trayectoria</a>
       <a href="#contact" data-i18n="nav.contact" class="block py-1 text-slate-700 dark:text-slate-300">Contacto</a>
     </div>
   </header>
@@ -162,13 +160,6 @@
         <!-- Left Column: Formal Info -->
         <div class="lg:col-span-8 space-y-4">
           
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="academic-badge bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-300 border-slate-300 dark:border-slate-700">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-700"></i>
-              <span data-i18n="hero.officeBadge">Despacho: Bureau P2 244 (Campus Centre UPEC)</span>
-            </span>
-          </div>
-
           <div>
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-[#0f2b5c] dark:text-white tracking-tight mb-1" data-i18n="hero.name">
               Danny Mallitasig
@@ -185,10 +176,6 @@
               <span><a href="https://lama-umr8050.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 font-semibold hover:underline">Laboratoire d'Analyse et de Mathématiques Appliquées (LAMA — UMR CNRS 8050)</a></span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]" data-i18n="hero.teamLabel">Equipo:</span>
-              <span data-i18n="hero.team">Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)</span>
-            </p>
-            <p class="flex items-start gap-2">
               <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]" data-i18n="hero.institutionLabel">Institución:</span>
               <span><a href="https://www.u-pec.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Université Paris-Est Créteil (UPEC)</a> &bull; <a href="https://www.idpoisson.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Université d'Orléans (IDP)</a></span>
             </p>
@@ -203,10 +190,6 @@
               <span data-i18n="hero.btnDownloadCv">Curriculum Vitae</span>
             </a>
 
-              <button onclick="app.copyEmail()" class="px-3.5 py-2 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5">
-              <i data-lucide="copy" class="w-3.5 h-3.5 text-blue-800 dark:text-blue-400"></i>
-              <span data-i18n="hero.copyEmail">Copiar correo institucional</span>
-            </button>
           </div>
 
 
@@ -321,30 +304,6 @@
   </section>
 
   <!-- ========================================================================
-       ACADEMIC TIMELINE / CV
-       ======================================================================== -->
-  <section id="cv" class="py-14 border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-        <div>
-          <h2 class="section-title" data-i18n="cvSection.title">Trayectoria Académica</h2>
-        </div>
-
-        <a href="cv.html" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white transition-colors self-start sm:self-auto">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          <span data-i18n="hero.btnDownloadCv">Descargar CV Académico</span>
-        </a>
-      </div>
-
-      <div class="max-w-3xl">
-        <div id="timelineList" class="space-y-1"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================================
        CONTACT & OFFICE
        ======================================================================== -->
   <section id="contact" class="py-14 bg-slate-50/70 dark:bg-[#0c142b] border-b border-slate-200 dark:border-slate-800">
@@ -359,14 +318,6 @@
         <!-- Office details -->
         <div class="lg:col-span-5 space-y-4">
           
-          <div class="academic-card p-5 space-y-2">
-            <h3 class="text-sm font-bold font-serif text-[#0f2b5c] dark:text-white flex items-center gap-2" data-i18n="contact.officeTitle">
-              <i data-lucide="map-pin" class="w-4 h-4 text-red-800"></i>
-              <span>Despacho en UPEC / LAMA</span>
-            </h3>
-            <p class="text-xs font-mono text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line" data-i18n="contact.officeDesc"></p>
-          </div>
-
           <div class="academic-card p-5 space-y-2">
             <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-2" data-i18n="contact.emailLabel">
               <i data-lucide="mail" class="w-4 h-4 text-blue-900"></i>
@@ -490,7 +441,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/i18n.js?v=20261123-pub1"></script>
-  <script src="js/main.js?v=20261123-pub1"></script>
+  <script src="js/i18n.js?v=20261123-cleanup1"></script>
+  <script src="js/main.js?v=20261123-cleanup1"></script>
 </body>
 </html>
