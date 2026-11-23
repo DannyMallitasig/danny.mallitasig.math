@@ -174,10 +174,10 @@ class AcademicApp {
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div class="min-w-0 flex-1">
               <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="academic-badge ${badge.class}">
+                ${pub.type !== 'preprint' ? `<span class="academic-badge ${badge.class}">
                   <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
                   ${badge.label}
-                </span>
+                </span>` : ''}
               </div>
               <p class="text-sm md:text-base text-slate-800 dark:text-slate-200 leading-relaxed">
                 ${citation}
