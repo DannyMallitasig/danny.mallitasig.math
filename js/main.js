@@ -167,55 +167,27 @@ class AcademicApp {
 
     container.innerHTML = filtered.map(pub => {
       const badge = typeBadges[pub.type] || { label: pub.type, class: 'border-slate-300 text-slate-700' };
+      const citation = pub.citation || `${pub.authors}. ${pub.title}. ${pub.venue}, ${pub.year}.`;
 
       return `
-        <article class="academic-card p-6 md:p-7 flex flex-col justify-between" data-type="${pub.type}">
-          <div>
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-              <span class="academic-badge ${badge.class}">
-                <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
-                ${badge.label}
-              </span>
-              <span class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400">${pub.year}</span>
-            </div>
-
-            <h3 class="text-xl font-bold font-serif text-slate-950 dark:text-white mb-2 leading-snug">
-              ${pub.title}
-            </h3>
-
-            <p class="text-sm text-slate-700 dark:text-slate-300 mb-1 font-medium">
-              <strong>${pub.authors}</strong>
-            </p>
-
-            ${pub.directors ? `<p class="text-xs text-slate-600 dark:text-slate-400 italic mb-2">${pub.directors}</p>` : ''}
-
-            <p class="text-xs font-mono text-slate-600 dark:text-slate-400 mb-4 bg-slate-50 dark:bg-slate-800/60 p-2 rounded border border-slate-200 dark:border-slate-700/60">
-              ${pub.venue}
-            </p>
-
-            <!-- Abstract Accordion -->
-            <div class="mb-4">
-              <button onclick="app.toggleAbstract('${pub.id}')" class="text-xs font-semibold text-blue-800 dark:text-blue-400 hover:underline flex items-center gap-1.5 focus:outline-none">
-                <i data-lucide="chevron-right" id="arrow-${pub.id}" class="w-3.5 h-3.5 transition-transform duration-200"></i>
-                <span>${t.abstract}</span>
-              </button>
-              <div id="abstract-${pub.id}" class="hidden mt-2 p-3 bg-white dark:bg-slate-900 rounded text-xs leading-relaxed text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800">
-                ${pub.abstract}
+        <article class="academic-card p-5 md:p-6" data-type="${pub.type}">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="academic-badge ${badge.class}">
+                  <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+                  ${badge.label}
+                </span>
               </div>
+              <p class="text-sm md:text-base text-slate-800 dark:text-slate-200 leading-relaxed">
+                ${citation}
+              </p>
+              ${pub.awardNote ? `<p class="mt-2 text-xs text-amber-800 dark:text-amber-300"><strong>${pub.awardNote.label}</strong> <a href="${pub.awardNote.url}" target="_blank" rel="noopener noreferrer" class="font-semibold italic underline hover:no-underline">${pub.awardNote.linkText}</a>.</p>` : ''}
             </div>
-          </div>
-
-          <!-- Verified Action Links -->
-          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-3">
-            <button onclick="app.openBibtex('${pub.id}')" class="px-3 py-1.5 rounded text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 flex items-center gap-1.5 border border-slate-300 dark:border-slate-700 transition-colors">
-              <i data-lucide="quote" class="w-3.5 h-3.5 text-red-700"></i>
-              <span>${t.copyBibtex}</span>
-            </button>
-            
             ${pub.officialUrl ? `
-              <a href="${pub.officialUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded text-xs font-medium bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 text-blue-900 dark:text-blue-300 flex items-center gap-1.5 border border-blue-200 dark:border-blue-800 transition-colors">
+              <a href="${pub.officialUrl}" target="_blank" rel="noopener noreferrer" class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 text-blue-900 dark:text-blue-300 border border-blue-200 dark:border-blue-800 transition-colors">
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                <span>${pub.type === 'thesis' && pub.id === 'pub-phd-thesis' ? t.viewThesesFr : (pub.type === 'thesis' ? t.viewAmarunRecord : t.viewOfficial)}</span>
+                <span>${t.viewOfficial}</span>
               </a>
             ` : ''}
           </div>
