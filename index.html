@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danny Mallitasig — Investigador Doctoral en Matemáticas | LAMA, UPEC & AMARUN</title>
+  <title data-i18n="meta.title">Danny Mallitasig — Investigador Doctoral en Matemáticas | LAMA, UPEC & AMARUN</title>
   
   <meta name="description" content="Página académica oficial de Danny Mallitasig, doctorant en mathématiques en el Laboratoire d'Analyse et de Mathématiques Appliquées (LAMA - UMR CNRS 8050), Université Paris-Est Créteil (UPEC) y miembro activo de AMARUN.">
   <meta name="keywords" content="Danny Mallitasig, Analyse Multifractale, LAMA, UPEC, CNRS, AMARUN, Stéphane Seuret, Athanasios Batakis, Wavelet Leaders, EPN Ecuador, Geometric Measure Theory">
@@ -121,7 +121,7 @@
           </div>
 
           <!-- Theme Button -->
-          <button id="themeToggle" aria-label="Cambiar tema" class="p-1.5 rounded border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+          <button id="themeToggle" aria-label="Cambiar tema" data-i18n-aria-label="ui.themeToggle" class="p-1.5 rounded border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
             <i data-lucide="sun" class="theme-icon-sun w-3.5 h-3.5 hidden"></i>
             <i data-lucide="moon" class="theme-icon-moon w-3.5 h-3.5"></i>
           </button>
@@ -133,7 +133,7 @@
           </a>
 
           <!-- Mobile Hamburger -->
-          <button id="mobileMenuBtn" aria-label="Menu" class="lg:hidden p-1.5 rounded border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+          <button id="mobileMenuBtn" aria-label="Menu" data-i18n-aria-label="ui.menu" class="lg:hidden p-1.5 rounded border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
             <i data-lucide="menu" class="w-4 h-4"></i>
           </button>
         </div>
@@ -181,15 +181,15 @@
           <!-- Verified Affiliations -->
           <div class="space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
             <p class="flex items-start gap-2">
-              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Laboratorio:</span>
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]" data-i18n="hero.labLabel">Laboratorio:</span>
               <span><a href="https://lama-umr8050.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 font-semibold hover:underline">Laboratoire d'Analyse et de Mathématiques Appliquées (LAMA — UMR CNRS 8050)</a></span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Equipo:</span>
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]" data-i18n="hero.teamLabel">Equipo:</span>
               <span data-i18n="hero.team">Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)</span>
             </p>
             <p class="flex items-start gap-2">
-              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]">Institución:</span>
+              <span class="font-bold text-slate-800 dark:text-slate-200 min-w-[90px]" data-i18n="hero.institutionLabel">Institución:</span>
               <span><a href="https://www.u-pec.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Université Paris-Est Créteil (UPEC)</a> &bull; <a href="https://www.idpoisson.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-900 dark:text-blue-400 hover:underline">Université d'Orléans (IDP)</a></span>
             </p>
           </div>
@@ -203,7 +203,7 @@
               <span data-i18n="hero.btnDownloadCv">Curriculum Vitae</span>
             </a>
 
-            <button onclick="app.copyEmail()" class="px-3.5 py-2 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5">
+              <button onclick="app.copyEmail()" class="px-3.5 py-2 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5">
               <i data-lucide="copy" class="w-3.5 h-3.5 text-blue-800 dark:text-blue-400"></i>
               <span data-i18n="hero.copyEmail">Copiar correo institucional</span>
             </button>
@@ -414,7 +414,7 @@
               <a href="mailto:danny.mallitasig@u-pec.fr" class="font-mono text-xs font-bold text-blue-900 dark:text-blue-400 hover:underline">
                 danny.mallitasig@u-pec.fr
               </a>
-              <button onclick="app.copyEmail()" title="Copiar correo" class="p-1 text-slate-600 hover:text-blue-900">
+              <button onclick="app.copyEmail()" title="Copiar correo" data-i18n-title="ui.copyEmailTitle" class="p-1 text-slate-600 hover:text-blue-900">
                 <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               </button>
             </div>
@@ -440,20 +440,20 @@
             <form id="contactForm" class="space-y-3.5">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nombre</label>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1" data-i18n="contact.nameLabel">Nombre</label>
                   <input type="text" name="name" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.namePlaceholder">
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Correo Electrónico</label>
+                  <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1" data-i18n="contact.emailFieldLabel">Correo Electrónico</label>
                   <input type="email" name="email" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.emailPlaceholder">
                 </div>
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Asunto</label>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1" data-i18n="contact.subjectLabel">Asunto</label>
                 <input type="text" name="subject" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.subjectPlaceholder">
               </div>
               <div>
-                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Mensaje</label>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1" data-i18n="contact.messageLabel">Mensaje</label>
                 <textarea name="message" rows="4" required class="w-full px-3 py-1.5 rounded border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs focus:outline-none focus:ring-1 focus:ring-blue-900" data-i18n="contact.msgPlaceholder"></textarea>
               </div>
               <button type="submit" class="px-5 py-2 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white flex items-center gap-1.5 transition-colors">
@@ -485,7 +485,7 @@
 
       <div class="flex items-center gap-4">
         <a href="#hero" class="hover:text-blue-900 dark:hover:text-blue-400 flex items-center gap-1 font-semibold">
-          <span>Subir al inicio</span>
+          <span data-i18n="footer.backToTop">Subir al inicio</span>
           <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
         </a>
       </div>
@@ -498,11 +498,11 @@
   <div id="bibtexModal" class="hidden fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm items-center justify-center p-4">
     <div class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg max-w-xl w-full p-5 shadow-xl relative">
       <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-3">
-        <h3 class="font-serif font-bold text-sm text-[#0f2b5c] dark:text-white flex items-center gap-2">
+        <h3 class="font-serif font-bold text-sm text-[#0f2b5c] dark:text-white flex items-center gap-2" data-i18n="ui.bibtexTitle">
           <i data-lucide="quote" class="w-4 h-4 text-red-800"></i>
           <span>Cita en Formato BibTeX</span>
         </h3>
-        <button onclick="app.closeBibtex()" class="text-slate-400 hover:text-slate-700 p-1">
+        <button onclick="app.closeBibtex()" class="text-slate-400 hover:text-slate-700 p-1" data-i18n-title="ui.close" title="Cerrar">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
@@ -510,12 +510,12 @@
       <pre id="bibtexCode" class="bibtex-code mb-4"></pre>
 
       <div class="flex justify-end gap-2">
-        <button onclick="app.closeBibtex()" class="px-3 py-1.5 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+        <button onclick="app.closeBibtex()" class="px-3 py-1.5 rounded text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300" data-i18n="ui.close">
           Cerrar
         </button>
         <button onclick="app.copyCurrentBibtex()" class="px-3 py-1.5 rounded text-xs font-semibold bg-[#0f2b5c] hover:bg-[#1e3a8a] text-white flex items-center gap-1.5">
           <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-          <span>Copiar BibTeX</span>
+          <span data-i18n="ui.copyBibtex">Copiar BibTeX</span>
         </button>
       </div>
     </div>
@@ -524,12 +524,11 @@
   <!-- Toast -->
   <div id="toast" class="toast-msg">
     <i data-lucide="check-circle" class="w-4 h-4 text-blue-900 dark:text-blue-400"></i>
-    <span id="toastText">Mensaje copiado</span>
+    <span id="toastText" data-i18n="ui.toastCopied">Mensaje copiado</span>
   </div>
 
   <!-- Scripts -->
-  <script src="js/i18n.js?v=20261123-2"></script>
-  <script src="js/main.js"></script>
+  <script src="js/i18n.js?v=20261123-en1"></script>
+  <script src="js/main.js?v=20261123-en1"></script>
 </body>
 </html>
-
