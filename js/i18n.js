@@ -148,9 +148,9 @@ function cvTeachingItems(lang) {
   return {
     courses: [
       { name: "Calculus 2", institution: "L1 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2026", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
-      { name: "Analyse vectorielle et alg&egrave;bre lin&eacute;aire", institution: "L2 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: "Enseignement de niveau L2 en analyse vectorielle et alg&egrave;bre lin&eacute;aire." },
+      { name: lang === "en" ? "Vector calculus and linear algebra" : "Analyse vectorielle et alg&egrave;bre lin&eacute;aire", institution: "L2 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: lang === "en" ? "L2 teaching in vector calculus and linear algebra." : "Enseignement de niveau L2 en analyse vectorielle et alg&egrave;bre lin&eacute;aire." },
       { name: "Calculus 2", institution: "L1 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
-      { name: "Introduction to the multifractal analysis", institution: "M2 · Summer School AMARUN", period: "2025", desc: "Introduction &agrave; l'analyse multifractale pour &eacute;tudiants de Master 2." }
+      { name: "Introduction to multifractal analysis", institution: "M2 · Summer School AMARUN", period: "2025", desc: lang === "en" ? "Introduction to multifractal analysis for Master 2 students." : "Introduction &agrave; l'analyse multifractale pour &eacute;tudiants de Master 2." }
     ],
     outreach: [
       { name: "Congr&egrave;s des Jeunes Chercheur.e.s en Math&eacute;matiques Appliqu&eacute;es (CJC-MA)", role: labels.committee, link: sources.cjc, desc: "Le CV indique la participation au comit&eacute; scientifique en 2026." },
@@ -159,10 +159,42 @@ function cvTeachingItems(lang) {
   };
 }
 
+const interfaceTranslations = {
+  es: {
+    meta: { title: "Danny Mallitasig — Investigador Doctoral en Matemáticas | LAMA, UPEC & AMARUN" },
+    ui: { themeToggle: "Cambiar tema", menu: "Menú", officialSite: "Sitio oficial", website: "Sitio web", bibtexTitle: "Cita en formato BibTeX", close: "Cerrar", copyBibtex: "Copiar BibTeX", toastCopied: "Mensaje copiado", bibtexCopied: "Cita BibTeX copiada al portapapeles", emailCopied: "Correo copiado al portapapeles", copyEmailTitle: "Copiar correo" },
+    hero: { labLabel: "Laboratorio:", teamLabel: "Equipo:", institutionLabel: "Institución:", team: "Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)" },
+    publications: { badges: { thesis: "Tesis académica", preprint: "Preprint / investigación", pedagogy: "Monografía docente AMARUN" }, viewOfficial: "Ver enlace oficial" },
+    contact: { nameLabel: "Nombre", emailFieldLabel: "Correo electrónico", subjectLabel: "Asunto", messageLabel: "Mensaje", defaultSubject: "Contacto académico", mailFrom: "De", draftFallback: "Borrador preparado en tu cliente de correo" },
+    footer: { backToTop: "Subir al inicio" }
+  },
+  en: {
+    meta: { title: "Danny Mallitasig — PhD student in Mathematics | LAMA, UPEC & AMARUN" },
+    ui: { themeToggle: "Toggle theme", menu: "Menu", officialSite: "Official website", website: "Website", bibtexTitle: "BibTeX citation", close: "Close", copyBibtex: "Copy BibTeX", toastCopied: "Copied", bibtexCopied: "BibTeX citation copied to clipboard", emailCopied: "Email copied to clipboard", copyEmailTitle: "Copy email" },
+    hero: { labLabel: "Laboratory:", teamLabel: "Research group:", institutionLabel: "Institution:", team: "Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)" },
+    publications: { badges: { thesis: "Academic thesis", preprint: "Preprint / research", pedagogy: "AMARUN teaching monograph" }, viewOfficial: "View official link" },
+    contact: { nameLabel: "Name", emailFieldLabel: "Email", subjectLabel: "Subject", messageLabel: "Message", defaultSubject: "Academic enquiry", mailFrom: "From", draftFallback: "Draft prepared in your email client" },
+    footer: { backToTop: "Back to top" }
+  },
+  fr: {
+    meta: { title: "Danny Mallitasig — Doctorant en mathématiques | LAMA, UPEC & AMARUN" },
+    ui: { themeToggle: "Changer de thème", menu: "Menu", officialSite: "Site officiel", website: "Site web", bibtexTitle: "Citation BibTeX", close: "Fermer", copyBibtex: "Copier BibTeX", toastCopied: "Message copié", bibtexCopied: "Citation BibTeX copiée dans le presse-papiers", emailCopied: "Courriel copié", copyEmailTitle: "Copier le courriel" },
+    hero: { labLabel: "Laboratoire :", teamLabel: "Équipe :", institutionLabel: "Institution :", team: "Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)" },
+    publications: { badges: { thesis: "Thèse académique", preprint: "Prépublication / recherche", pedagogy: "Monographie pédagogique AMARUN" }, viewOfficial: "Voir le lien officiel" },
+    contact: { nameLabel: "Nom", emailFieldLabel: "Courriel", subjectLabel: "Objet", messageLabel: "Message", defaultSubject: "Contact académique", mailFrom: "De", draftFallback: "Brouillon préparé dans votre messagerie" },
+    footer: { backToTop: "Retour en haut" }
+  }
+};
+
+Object.keys(interfaceTranslations).forEach(lang => {
+  Object.keys(interfaceTranslations[lang]).forEach(section => {
+    translations[lang][section] = { ...(translations[lang][section] || {}), ...interfaceTranslations[lang][section] };
+  });
+});
+
 Object.keys(translations).forEach(lang => {
   translations[lang].research.areas = commonResearch[lang];
   translations[lang].publications.items = cvPublicationItems(lang);
   translations[lang].talks.items = cvTalkItems(lang);
   translations[lang].teaching = { ...translations[lang].teaching, ...cvTeachingItems(lang) };
 });
-
