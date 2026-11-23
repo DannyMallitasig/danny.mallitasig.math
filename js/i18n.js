@@ -151,8 +151,11 @@ function cvTeachingItems(lang) {
       { name: "Introduction to Multifractal analysis", institution: (lang === "en" ? "Master · " : "M2 · ") + "Summer School AMARUN", period: "2025", desc: lang === "en" ? "Introduction to Multifractal analysis for Master students." : "Introduction &agrave; l'analyse multifractale pour &eacute;tudiants de Master 2." }
     ],
     outreach: [
-      { name: "Congr&egrave;s des Jeunes Chercheur.e.s en Math&eacute;matiques Appliqu&eacute;es (CJC-MA)", role: labels.committee, link: sources.cjc, desc: "Le CV indique la participation au comit&eacute; scientifique en 2026." },
-      { name: "Association of Mathematics and Applied Mathematics Students of the Escuela Polit&eacute;cnica Nacional", role: labels.vice, desc: "Vicepresidencia de divulgaci&oacute;n durante 2022–2023 en la Escuela Polit&eacute;cnica Nacional." }
+      { name: "Congr&egrave;s des Jeunes Chercheur.e.s en Math&eacute;matiques Appliqu&eacute;es (CJC-MA)", role: labels.committee, link: sources.cjc, desc: lang === "en" ? "The CV records participation as a member of the scientific committee in 2026." : "Le CV indique la participation au comit&eacute; scientifique en 2026." },
+      { name: "Association of Mathematics and Applied Mathematics Students of the Escuela Polit&eacute;cnica Nacional", role: labels.vice, desc: lang === "en" ? "Vice President of Outreach from 2022 to 2023 at the Escuela Polit&eacute;cnica Nacional." : "Vicepresidencia de divulgaci&oacute;n durante 2022–2023 en la Escuela Polit&eacute;cnica Nacional." },
+      { name: "&lsquo;Mots &agrave; Croquer&rsquo; festival in Saint-Denis (2025)", role: lang === "en" ? "Participant" : "Participation", desc: "I participated in a storytelling festival for children at an elementary school in Saint-Denis. We read the text &ldquo;The Math Demon&rdquo; and then discussed mathematics with the children." },
+      { name: "European Girls&rsquo; Mathematical Olympiad (EGMO 2026)", role: lang === "en" ? "Volunteer" : "B&eacute;n&eacute;vole", link: sources.egmo, desc: "I participated as a volunteer in the European Girls&rsquo; Mathematical Olympiad (EGMO 2026) in Bordeaux, France, from 9 to 15 April 2026." },
+      { name: "MATH.en.JEANS Colombie 2026", role: lang === "en" ? "Volunteer" : "B&eacute;n&eacute;vole", desc: "I participated as a volunteer in the MATH.en.JEANS Colombie 2026 project, from 11 February to 20 October 2026. I proposed two mathematical problems to a group of high school students in Colombia. We met every two weeks to monitor their progress and discuss their research. My role was to guide and support the students throughout the project." }
     ]
   };
 }
