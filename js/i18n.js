@@ -107,11 +107,9 @@ const translations = {
 };
 
 function cvPublicationItems(lang) {
-  const jointWork = lang === "es" ? "Trabajo conjunto con S. Seuret" : lang === "en" ? "Joint work with S. Seuret" : "Travail conjoint avec S. Seuret";
-  const listed = lang === "es" ? "Preprint declarado en el CV." : lang === "en" ? "Preprint listed in the CV." : "Pr&eacute;publication indiqu&eacute;e dans le CV.";
   return [
-    { id: "pub-bivariate-2026", type: "preprint", title: "Prescription of bivariate multifractal spectrum", authors: "Danny Mallitasig", directors: jointWork, venue: "Preprint", year: "2026", abstract: listed, bibtex: "@article{mallitasig2026bivariate,\n  title={Prescription of bivariate multifractal spectrum},\n  author={Mallitasig, Danny},\n  year={2026},\n  note={Joint work with S. Seuret; preprint}\n}" },
-    { id: "pub-multivariate-2025", type: "preprint", title: "Prescription of multivariate multifractal spectrum", authors: "Danny Mallitasig", venue: "Preprint", year: "2025", abstract: listed, bibtex: "@article{mallitasig2025multivariate,\n  title={Prescription of multivariate multifractal spectrum},\n  author={Mallitasig, Danny},\n  year={2025},\n  note={Preprint}\n}" }
+    { id: "pub-bivariate-2025", type: "preprint", title: "Prescription of bivariate multifractal spectrum", authors: "S. Seuret, D. Mallitasig", venue: "Proceedings of the conference IWW25", year: "2025", citation: "S. Seuret, D. Mallitasig. Prescription of bivariate multifractal spectrum. Proceedings of the conference IWW25, 2025.", officialUrl: "https://sites.math.u-pem.fr/sseuret/publications/Prescription-bivariate.pdf", awardNote: { label: "This paper was awarded with the", linkText: "Best paper award of IWW25", url: "https://iww.itu.edu.tr/" }, bibtex: "@inproceedings{seuret2025bivariate,\n  title={Prescription of bivariate multifractal spectrum},\n  author={Seuret, S. and Mallitasig, D.},\n  booktitle={Proceedings of the conference IWW25},\n  year={2025}\n}" },
+    { id: "pub-multivariate-2026", type: "preprint", title: "Prescription of Multivariate Multifractal Behavior", authors: "D. Mallitasig", venue: "Preprint", year: "2026", citation: "D. Mallitasig. Prescription of Multivariate Multifractal Behavior [Preprint]. 2026.", officialUrl: "https://hal.science/hal-05585092v1/document", bibtex: "@article{mallitasig2026multivariate,\n  title={Prescription of Multivariate Multifractal Behavior},\n  author={Mallitasig, D.},\n  year={2026},\n  note={Preprint}\n}" }
   ];
 }
 
