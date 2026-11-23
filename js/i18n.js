@@ -145,14 +145,14 @@ function cvTeachingItems(lang) {
   const labels = lang === "es" ? { present: "Presente", course: "Curso", committee: "Comit&eacute; cient&iacute;fico", vice: "Vicepresidencia de divulgaci&oacute;n" } : lang === "en" ? { present: "Present", course: "Course", committee: "Scientific committee member", vice: "Vice President of Outreach" } : { present: "Pr&eacute;sent", course: "Cours", committee: "Comit&eacute; scientifique", vice: "Vice-pr&eacute;sidence de la m&eacute;diation" };
   return {
     courses: [
-      { name: "Calculus 2", institution: "L1 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2026", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
-      { name: lang === "en" ? "Vector calculus and linear algebra" : "Analyse vectorielle et alg&egrave;bre lin&eacute;aire", institution: "L2 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: lang === "en" ? "L2 teaching in vector calculus and linear algebra." : "Enseignement de niveau L2 en analyse vectorielle et alg&egrave;bre lin&eacute;aire." },
-      { name: "Calculus 2", institution: "L1 · Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
-      { name: "Introduction to multifractal analysis", institution: "M2 · Summer School AMARUN", period: "2025", desc: lang === "en" ? "Introduction to multifractal analysis for Master 2 students." : "Introduction &agrave; l'analyse multifractale pour &eacute;tudiants de Master 2." }
+      { name: "Calculus 2", institution: (lang === "en" ? "Licence L1 · " : "L1 · ") + "Universit&eacute; Paris-Est Cr&eacute;teil", period: "2026", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
+      { name: lang === "en" ? "Calculus in several variables and linear algebra" : "Analyse vectorielle et alg&egrave;bre lin&eacute;aire", institution: (lang === "en" ? "Licence L2 · " : "L2 · ") + "Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: lang === "en" ? "L2 teaching in calculus in several variables and linear algebra." : "Enseignement de niveau L2 en analyse vectorielle et alg&egrave;bre lin&eacute;aire." },
+      { name: "Calculus 2", institution: (lang === "en" ? "Licence L1 · " : "L1 · ") + "Universit&eacute; Paris-Est Cr&eacute;teil", period: "2025", desc: labels.course + " de calcul pour &eacute;tudiants de L1." },
+      { name: "Introduction to Multifractal analysis", institution: (lang === "en" ? "Master · " : "M2 · ") + "Summer School AMARUN", period: "2025", desc: lang === "en" ? "Introduction to Multifractal analysis for Master students." : "Introduction &agrave; l'analyse multifractale pour &eacute;tudiants de Master 2." }
     ],
     outreach: [
       { name: "Congr&egrave;s des Jeunes Chercheur.e.s en Math&eacute;matiques Appliqu&eacute;es (CJC-MA)", role: labels.committee, link: sources.cjc, desc: "Le CV indique la participation au comit&eacute; scientifique en 2026." },
-      { name: "Association of Mathematics and Applied Mathematics Students", role: labels.vice, desc: "Vicepresidencia de divulgaci&oacute;n durante 2022–2023 en la Escuela Polit&eacute;cnica Nacional." }
+      { name: "Association of Mathematics and Applied Mathematics Students of the Escuela Polit&eacute;cnica Nacional", role: labels.vice, desc: "Vicepresidencia de divulgaci&oacute;n durante 2022–2023 en la Escuela Polit&eacute;cnica Nacional." }
     ]
   };
 }
@@ -171,6 +171,7 @@ const interfaceTranslations = {
     ui: { themeToggle: "Toggle theme", menu: "Menu", officialSite: "Official website", website: "Website", bibtexTitle: "BibTeX citation", close: "Close", copyBibtex: "Copy BibTeX", toastCopied: "Copied", bibtexCopied: "BibTeX citation copied to clipboard", emailCopied: "Email copied to clipboard", copyEmailTitle: "Copy email" },
     hero: { labLabel: "Laboratory:", teamLabel: "Research group:", institutionLabel: "Institution:", team: "Équipe Analyse Harmonique, Multifractale et Diophantienne (AHMD)" },
     publications: { badges: { thesis: "Academic thesis", preprint: "Preprint / research", pedagogy: "AMARUN teaching monograph" }, viewOfficial: "View official link" },
+    teaching: { universityTitle: "Teaching", outreachTitle: "Outreach activities" },
     contact: { nameLabel: "Name", emailFieldLabel: "Email", subjectLabel: "Subject", messageLabel: "Message", defaultSubject: "Academic enquiry", mailFrom: "From", draftFallback: "Draft prepared in your email client" },
     footer: { backToTop: "Back to top" }
   },
