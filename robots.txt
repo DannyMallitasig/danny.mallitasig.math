@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dannymallitasig.github.io/danny.mallitasig.math/sitemap.xml
+
