@@ -268,18 +268,15 @@ class AcademicApp {
 
     outreachContainer.innerHTML = t.outreach.map(o => `
       <div class="academic-card p-5 space-y-2">
-        <div class="flex items-center justify-between">
-          <span class="academic-badge bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-300 border-red-200 dark:border-red-800">
-            ${o.role}
-          </span>
+        <div class="flex items-start justify-between gap-4">
+          <h4 class="text-base font-bold font-serif text-slate-900 dark:text-slate-100">${o.name}</h4>
           ${o.link ? `
-            <a href="${o.link}" target="_blank" rel="noopener noreferrer" class="text-xs text-blue-800 dark:text-blue-400 hover:underline flex items-center gap-1">
+            <a href="${o.link}" target="_blank" rel="noopener noreferrer" class="shrink-0 text-xs text-blue-800 dark:text-blue-400 hover:underline flex items-center gap-1">
               <span>${translations[this.currentLang].ui.website}</span>
               <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           ` : ''}
         </div>
-        <h4 class="text-base font-bold font-serif text-slate-900 dark:text-slate-100">${o.name}</h4>
         ${o.desc ? `<p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">${o.desc}</p>` : ''}
       </div>
     `).join('');
