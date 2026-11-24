@@ -262,6 +262,7 @@ class AcademicApp {
           <span class="font-mono">${c.period}</span>
         </div>
         <h4 class="text-base font-bold font-serif text-slate-900 dark:text-slate-100">${c.name}</h4>
+        ${c.desc ? `<p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">${c.desc}</p>` : ''}
       </div>
     `).join('');
 
@@ -469,3 +470,4 @@ class AcademicApp {
 
 const app = new AcademicApp();
 window.app = app;
+
